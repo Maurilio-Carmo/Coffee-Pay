@@ -74,4 +74,4 @@ Edite `data/config.json` para personalizar sem mexer no código:
 
 ## 📄 Licença
 
-MIT
+Apache License 2.0
