@@ -1,74 +1,30 @@
 # ☕ Coffee Pay
 
-Página de apoio open source do Maurílio — contribuições via **PIX** com QR Code dinâmico e **GitHub Sponsors**.
+Página pessoal de apoio ao meu trabalho open source — contribuições via **PIX** com QR Code dinâmico e **GitHub Sponsors**.
 
-**[https://maurilio-carmo.github.io/Coffee-Pay/](https://maurilio-carmo.github.io/Coffee-Pay/)**
-
-Toda a operação é executada no front-end (client-side). Sem backend, sem dependências externas.
+**[maurilio-carmo.github.io/Coffee-Pay](https://maurilio-carmo.github.io/Coffee-Pay/)**
 
 ---
 
-## ✔️ Funcionalidades
+## O que é
 
-* QR Code PIX gerado dinamicamente no padrão EMV/BR Code
-* Valores predefinidos + campo de valor livre
-* Botão "Copiar código PIX" (copia e cola)
-* Link direto para GitHub Sponsors
-* Skeleton de carregamento e tema escuro premium
-* Totalmente configurável via `data/config.json`
+Uma página simples e direta para quem quiser apoiar o meu trabalho. O visitante escolhe um valor, escaneia o QR Code ou copia o código PIX, e pronto. Sem cadastro, sem redirecionamentos, sem intermediários.
 
 ---
 
-## 🏗️ Estrutura
+## Como funciona
 
-```
-├── components/          # HTML parciais carregados via fetch
-├── css/                 # Estilos modulares (base, skeleton, header, etc.)
-├── data/
-│   └── config.json      # Chave PIX, valores, textos e links
-├── icons/               # Favicon SVG
-├── lib/
-│   └── qrcode.min.js    # Biblioteca QR Code auto-hospedada
-└── src/
-    ├── main.js           # Entry point — orquestra MVC
-    ├── PixModel.js       # Geração do payload PIX (EMV/BR Code)
-    ├── QRService.js      # Renderização do QR Code
-    ├── ComponentLoader.js
-    └── ViewController.js
-```
+O payload PIX é gerado inteiramente no front-end seguindo o padrão **EMV/BR Code** do Banco Central. Nenhum dado é enviado a servidores externos — tudo acontece no navegador do visitante.
+
+A arquitetura segue **MVC com ES Modules** nativos, sem frameworks ou bundlers.
 
 ---
 
-## ⚙️ Configuração
+## Tecnologias
 
-Edite `data/config.json` para personalizar sem mexer no código:
-
-```json
-{
-  "pix": {
-    "key": "sua-chave-pix",
-    "beneficiary": "Nome Curto (max 25 chars)",
-    "beneficiaryDisplay": "Nome completo para exibição",
-    "city": "Sua Cidade",
-    "message": "Mensagem do PIX"
-  },
-  "github": {
-    "username": "seu-usuario",
-    "sponsorsUrl": "https://github.com/sponsors/seu-usuario"
-  },
-  "page": {
-    "initials": "MC",
-    "title": "Título da página",
-    "subtitle": "Subtítulo",
-    "footer": "Texto do rodapé"
-  },
-  "amounts": [
-    { "value": 5,  "label": "café" },
-    { "value": 15, "label": "almoço" },
-    { "value": 30, "label": "apoio" }
-  ]
-}
-```
+* HTML5 · CSS3 · JavaScript ES6+
+* QR Code gerado via `qrcodejs` (auto-hospedado)
+* Hospedado no GitHub Pages
 
 ---
 
