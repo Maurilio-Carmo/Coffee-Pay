@@ -1,0 +1,25 @@
+{
+  "pix": {
+    "key": "5e43fd84-d9f9-45d1-850b-7a67b6410e1b",
+    "beneficiary": "Maurilio Do Carmo Medei",
+    "beneficiaryDisplay": "Maurílio Do Carmo Medeiro",
+    "city": "Fortaleza",
+    "message": "Me pague um cafe via PIX"
+  },
+  "github": {
+    "username": "Maurilio-Carmo",
+    "sponsorsUrl": "https://github.com/sponsors/Maurilio-Carmo"
+  },
+  "page": {
+    "initials": "MC",
+    "title": "Apoie o Maurílio",
+    "subtitle": "Se meu trabalho te ajudou de alguma forma, considere contribuir — qualquer valor faz diferença.",
+    "footer": "Obrigado pelo apoio 🙏"
+  },
+  "amounts": [
+    { "value": 5,  "label": "café" },
+    { "value": 15, "label": "almoço" },
+    { "value": 30, "label": "apoio" }
+  ]
+}
+
