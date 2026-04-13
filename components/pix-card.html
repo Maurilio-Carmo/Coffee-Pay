@@ -1,0 +1,39 @@
+<div class="card" id="pix-card">
+  <div class="card-title">☕ PIX — Escaneie ou copie</div>
+
+  <div class="amounts" id="amounts-container"></div>
+
+  <div class="outros-input-wrap" id="outrosWrap">
+    <label for="outrosInput">Digite o valor (R$)</label>
+    <input
+      type="number"
+      class="outros-input"
+      id="outrosInput"
+      placeholder="Ex: 50"
+      min="1"
+    />
+  </div>
+
+  <div class="qr-wrapper">
+    <div class="qr-valor" id="qrValor">R$ 5,00</div>
+
+    <div class="qr-box" id="qrBox">
+      <div id="qrcode"></div>
+    </div>
+
+    <div class="qr-instruction">
+      <strong>Como pagar pelo QR Code</strong>
+      Abra o app do seu banco → PIX → Pagar com QR Code → aponte a câmera
+    </div>
+
+    <button class="copy-btn" id="copyBtn">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="9" y="9" width="13" height="13" rx="2"/>
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+      </svg>
+      Copiar código PIX (Copia e Cola)
+    </button>
+
+    <p class="pix-name">Beneficiário: <strong id="pix-beneficiary"></strong></p>
+  </div>
+</div>
