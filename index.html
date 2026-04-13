@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Apoie o trabalho open source do Maurílio via PIX ou GitHub Sponsors." />
+  <title>Apoie o Maurílio</title>
+
+  <!-- QRCode.js via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <!-- CSS (index une todos os arquivos) -->
+  <link rel="stylesheet" href="./css/index.css" />
+</head>
+<body>
+
+  <div class="container">
+    <!-- Slots para os componentes carregados via JS -->
+    <div id="slot-header"></div>
+    <div id="slot-pix"></div>
+    <div id="slot-github"></div>
+    <div id="slot-footer"></div>
+  </div>
+
+  <!-- Entry point (ES Modules) -->
+  <script type="module" src="./src/main.js"></script>
+
+</body>
+</html>
