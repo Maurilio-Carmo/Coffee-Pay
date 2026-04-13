@@ -3,11 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Apoie o trabalho open source do Maurílio via PIX ou GitHub Sponsors." />
+  <meta name="theme-color" content="#0e0e0e" />
+
+  <!-- SEO & Social sharing -->
+  <meta name="description" content="Se meu trabalho open source te ajudou, considere contribuir via PIX ou GitHub Sponsors." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Apoie o Maurílio" />
+  <meta property="og:description" content="Se meu trabalho open source te ajudou, considere contribuir via PIX ou GitHub Sponsors." />
+  <meta name="twitter:card"        content="summary" />
+  <meta name="twitter:title"       content="Apoie o Maurílio" />
+  <meta name="twitter:description" content="Se meu trabalho open source te ajudou, considere contribuir via PIX ou GitHub Sponsors." />
+
   <title>Apoie o Maurílio</title>
 
-  <!-- QRCode.js via CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./icons/favicon.svg" />
+
+  <!-- Font preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- QRCode.js — auto-hospedado (sem CDN externo) -->
+  <script src="./lib/qrcode.min.js" defer></script>
 
   <!-- CSS (index une todos os arquivos) -->
   <link rel="stylesheet" href="./css/index.css" />
@@ -15,14 +32,57 @@
 <body>
 
   <div class="container">
-    <!-- Slots para os componentes carregados via JS -->
-    <div id="slot-header"></div>
-    <div id="slot-pix"></div>
-    <div id="slot-github"></div>
-    <div id="slot-footer"></div>
+
+    <!-- Header skeleton -->
+    <div id="slot-header">
+      <div class="sk-header">
+        <div class="sk sk-circle"></div>
+        <div class="sk sk-title"></div>
+        <div class="sk sk-text"></div>
+        <div class="sk sk-text sk-text--short"></div>
+      </div>
+    </div>
+
+    <!-- PIX card skeleton -->
+    <div id="slot-pix">
+      <div class="sk-card">
+        <div class="sk sk-label"></div>
+        <div class="sk-amounts">
+          <div class="sk sk-btn"></div>
+          <div class="sk sk-btn"></div>
+          <div class="sk sk-btn"></div>
+          <div class="sk sk-btn"></div>
+        </div>
+        <div class="sk-qr-area">
+          <div class="sk sk-qr"></div>
+          <div class="sk sk-btn-full"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GitHub card skeleton -->
+    <div id="slot-github">
+      <div class="sk-card">
+        <div class="sk sk-label"></div>
+        <div class="sk sk-btn-full"></div>
+      </div>
+    </div>
+
+    <!-- Footer skeleton -->
+    <div id="slot-footer">
+      <div class="sk sk-footer"></div>
+    </div>
+
   </div>
 
-  <!-- Entry point (ES Modules) -->
+  <noscript>
+    <style>.container { display: none; }</style>
+    <div style="text-align:center;padding:3rem;color:#f0ede8;font-family:sans-serif;">
+      JavaScript é necessário para carregar esta página.
+    </div>
+  </noscript>
+
+  <!-- Entry point (ES Modules — defer implícito) -->
   <script type="module" src="./src/main.js"></script>
 
 </body>

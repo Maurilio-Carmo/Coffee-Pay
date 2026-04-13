@@ -63,7 +63,7 @@ export class ViewController {
       outrosInput.addEventListener('input', (e) => {
         clearTimeout(this._outrosTimer);
         const val = parseFloat(e.target.value);
-        if (!val || val <= 0) return;
+        if (!val || val < 1) return;
         this._outrosTimer = setTimeout(() => this._updateQR(val), 600);
       });
     }
@@ -117,11 +117,35 @@ export class ViewController {
 
   _copyPix() {
     if (!this._payload) return;
-    navigator.clipboard.writeText(this._payload).then(() => {
-      this._setCopiedState(true);
-      this._showToast();
-      setTimeout(() => this._setCopiedState(false), 2500);
-    });
+
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(this._payload)
+        .then(() => this._onCopied())
+        .catch(() => this._fallbackCopy(this._payload));
+    } else {
+      this._fallbackCopy(this._payload);
+    }
+  }
+
+  _fallbackCopy(text) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand('copy');
+      this._onCopied();
+    } catch {
+      // cópia não suportada
+    }
+    document.body.removeChild(ta);
+  }
+
+  _onCopied() {
+    this._setCopiedState(true);
+    this._showToast();
+    setTimeout(() => this._setCopiedState(false), 2500);
   }
 
   _setCopiedState(copied) {
@@ -129,15 +153,17 @@ export class ViewController {
     if (!btn) return;
     if (copied) {
       btn.classList.add('copied');
+      btn.setAttribute('aria-label', 'Código PIX copiado!');
       btn.innerHTML = `
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
           <polyline points="20 6 9 17 4 12"/>
         </svg>
         Copiado!`;
     } else {
       btn.classList.remove('copied');
+      btn.setAttribute('aria-label', 'Copiar código PIX copia e cola');
       btn.innerHTML = `
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
           <rect x="9" y="9" width="13" height="13" rx="2"/>
           <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
         </svg>

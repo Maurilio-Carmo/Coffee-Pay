@@ -3,7 +3,7 @@
   text-align: center;
   margin-top: 2rem;
   font-size: 0.78rem;
-  color: #444;
+  color: var(--muted);
 }
 
 /* ── Toast notification ──────────────────────────────────────── */
