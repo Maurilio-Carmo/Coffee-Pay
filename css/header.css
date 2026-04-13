@@ -1,5 +1,5 @@
 /* ── Header ──────────────────────────────────────────────────── */
-.container {
+main.container, .container {
   max-width: 480px;
   width: 100%;
   animation: fadeUp 0.7s ease both;

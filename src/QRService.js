@@ -30,5 +30,9 @@ export class QRService {
       colorLight: '#ffffff',
       correctLevel: QRCode.CorrectLevel.M,
     });
+
+    // A biblioteca gera um <img> sem atributo alt — corrige para acessibilidade
+    const img = el.querySelector('img');
+    if (img) img.alt = 'QR Code PIX para pagamento';
   }
 }

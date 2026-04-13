@@ -19,9 +19,12 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="./icons/favicon.svg" />
 
-  <!-- Font preconnect -->
+  <!-- Fontes: preconnect + carregamento assíncrono (não bloqueia renderização) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" /></noscript>
 
   <!-- QRCode.js — auto-hospedado (sem CDN externo) -->
   <script src="./lib/qrcode.min.js" defer></script>
@@ -31,7 +34,7 @@
 </head>
 <body>
 
-  <div class="container">
+  <main class="container">
 
     <!-- Header skeleton -->
     <div id="slot-header">
@@ -73,7 +76,7 @@
       <div class="sk sk-footer"></div>
     </div>
 
-  </div>
+  </main>
 
   <noscript>
     <style>.container { display: none; }</style>
