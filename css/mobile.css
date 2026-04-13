@@ -1,0 +1,39 @@
+/* ── Mobile (default — mobile first) ────────────────────────── */
+@media (max-width: 480px) {
+  body {
+    padding: 1.5rem 0.75rem;
+    align-items: flex-start;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .amounts {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.4rem;
+  }
+
+  .amount-btn {
+    font-size: 0.78rem;
+    padding: 0.6rem 0;
+  }
+
+  .qr-box {
+    padding: 0.75rem;
+  }
+
+  #qrcode canvas,
+  #qrcode img {
+    width: 180px !important;
+    height: 180px !important;
+  }
+}

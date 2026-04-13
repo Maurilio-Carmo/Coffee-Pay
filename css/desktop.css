@@ -1,0 +1,24 @@
+/* ── Desktop ─────────────────────────────────────────────────── */
+@media (min-width: 481px) {
+  body {
+    padding: 3rem 1rem;
+  }
+
+  .container {
+    max-width: 480px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  .card {
+    padding: 2rem;
+  }
+
+  #qrcode canvas,
+  #qrcode img {
+    width: 200px !important;
+    height: 200px !important;
+  }
+}

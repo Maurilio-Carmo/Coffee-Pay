@@ -1,0 +1,210 @@
+/* ── Card ────────────────────────────────────────────────────── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ── Amount buttons ──────────────────────────────────────────── */
+.amounts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.amount-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0.65rem 0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.amount-btn:hover,
+.amount-btn.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(200,169,110,0.07);
+}
+
+.amount-btn .label {
+  display: block;
+  font-size: 0.62rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.amount-btn.active .label {
+  color: var(--accent);
+  opacity: 0.7;
+}
+
+/* ── Custom amount input ─────────────────────────────────────── */
+.outros-input-wrap {
+  margin-bottom: 1.5rem;
+  display: none;
+}
+
+.outros-input-wrap.visible { display: block; }
+
+.outros-input-wrap label {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.outros-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #111;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.outros-input:focus { border-color: var(--accent); }
+.outros-input::placeholder { color: #444; }
+
+/* ── QR Code area ────────────────────────────────────────────── */
+.qr-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.qr-box {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 40px rgba(200,169,110,0.15);
+  transition: opacity 0.2s;
+}
+
+.qr-box.loading { opacity: 0.4; }
+
+#qrcode canvas,
+#qrcode img {
+  display: block;
+  border-radius: 4px;
+}
+
+.qr-valor {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.qr-instruction {
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.qr-instruction strong {
+  color: var(--text);
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.88rem;
+}
+
+/* ── Copy button ─────────────────────────────────────────────── */
+.copy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.85rem;
+  background: transparent;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  color: var(--accent);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.copy-btn:hover { background: rgba(200,169,110,0.08); }
+
+.copy-btn.copied {
+  border-color: var(--success);
+  color: var(--success);
+  background: rgba(76,175,125,0.07);
+}
+
+/* ── Beneficiary ─────────────────────────────────────────────── */
+.pix-name {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.pix-name strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* ── GitHub button ───────────────────────────────────────────── */
+.github-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.9rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.github-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(200,169,110,0.05);
+}
+
+.github-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
