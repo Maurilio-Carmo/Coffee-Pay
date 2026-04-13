@@ -72,17 +72,6 @@ Edite `data/config.json` para personalizar sem mexer no código:
 
 ---
 
-## 🚀 Deploy no GitHub Pages
-
-1. Suba o projeto em um repositório público
-2. Acesse **Settings → Pages**
-3. Em **Source**, selecione `main` e pasta `/ (root)`
-4. Salve — disponível em `https://seu-usuario.github.io/nome-do-repo`
-
-> Para testes locais, use a extensão **Live Server** no VS Code — o projeto usa `fetch` para carregar componentes e precisa de um servidor HTTP.
-
----
-
 ## 📄 Licença
 
 MIT
